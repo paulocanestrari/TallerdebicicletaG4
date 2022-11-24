@@ -9,6 +9,6 @@ package taller.data;
  *
  * @author canes
  */
-public class Bisicletadata {
+public class Bicicletadata {
     
 }
