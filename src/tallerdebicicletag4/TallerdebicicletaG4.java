@@ -5,7 +5,7 @@
  */
 package tallerdebicicletag4;
 
-import taller.entidades.Conexion;
+import taller.data.Conexion;
 
 /**
  *
