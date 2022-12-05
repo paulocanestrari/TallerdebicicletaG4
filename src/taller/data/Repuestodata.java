@@ -117,29 +117,30 @@ public class Repuestodata {
             JOptionPane.showMessageDialog(null, "RepuestoData Sentencia SQL erronea-borrarrepuesto");
         }
     }
-    
-    
-   /* 
-    public void actualizaAlumno(Alumno alumno){
-        String sql="UPDATE alumno SET dni=?, apellido = ?, nombre = ?, fecha_nacimiento = ?, estado=? WHERE id_alumno= ?";
-        try {
-            PreparedStatement ps=con.prepareStatement(sql);
-            ps.setLong(1, alumno.getDni());
-            ps.setString(2, alumno.getApellido());
-            ps.setString(3, alumno.getNombre());
-            ps.setDate(4, Date.valueOf(alumno.getFecha_nacimiento()));
-            ps.setBoolean(5, alumno.getEstado());
-            ps.setInt(6, alumno.getId_alumno());
-            
-            ps.executeUpdate();
-            
-            JOptionPane.showMessageDialog(null, "Datos del alumno actualizados");
-            
-            ps.close();
-            
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ALumnoData Sentencia SQL erronea-actualizarAlumno");
+public void actualizarRepuesto(Repuesto r) {
+        String sql = "UPDATE repuesto SET descripcion= ? ,precio= ? ,estado= ? WHERE num_serie = ?";
+        
+            try {
+                PreparedStatement ps = com.prepareStatement(sql);
+               
+                ps.setString(1, r.getDescripcion());
+                ps.setFloat(2, r.getPrecio());
+                ps.setBoolean(3, r.isEstado());
+                ps.setInt(4, r.getNum_serie());
+
+                if (ps.executeUpdate() > 0) {
+                    JOptionPane.showMessageDialog(null, "Se pudo actualizar el repuesto.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudo actualizar el repuesto.");
+                }
+
+                ps.close();
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Se produjo un error. en actualizar repuesto" + ex);
+            }
         }
+
     }
-}*/
-}
+
+     

@@ -125,10 +125,32 @@ public class Bicicletadata {
             JOptionPane.showMessageDialog(null, "BicicletaData Sentencia SQL erronea-borrar bicicleta");
         }
     }
-    
-    
-    
-    
-    
+    public void actualizarBicicleta(Bicicleta bici) {
+        String sql = "UPDATE bicicleta SET num_serie= ? , tipo= ? ,color= ? ,dueño= ?, estado=? WHERE num_serie = ?";
+            
+            try {
+            PreparedStatement ps = com.prepareStatement(sql);
+            ps.setInt(1, bici.getNum_serie());
+            ps.setString(2, bici.getTipo());
+            ps.setString(3, bici.getColor());
+            ps.setInt(4, bici.getDueño().getDni());
+            ps.setBoolean(5, bici.isEstado());
+            ps.setInt(6, bici.getNum_serie());
+           
+           
+            if (ps.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Se pudo actualizar la bicicleta.");
+            } else  {
+                JOptionPane.showMessageDialog(null, "No se pudo actualizar la bicicleta.");
+            }
+            
+            ps.close();
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Se produjo un error. en actualizar bicicleta"+ex);
+        }  
+            }
+            
+            
     
 }
