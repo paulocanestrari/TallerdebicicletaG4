@@ -60,7 +60,7 @@ public void guardarItemrepuesto (Itemrepuesto item){
         
     }
     //buscar itemDetalle
-    public Itemrepuesto buscarItem_detallePorID(int id) {
+    public Itemrepuesto buscarItemrepuestosPorID(int id) {
         Itemrepuesto item = null;
         String sql = "SELECT * FROM itemrespuesto WHERE Id_ItemRepuesto= ?";
         try {
@@ -88,15 +88,14 @@ public void guardarItemrepuesto (Itemrepuesto item){
     
     //actualizar itemDetalle
     public void actualizarItemrepuesto(Itemrepuesto item) { 
-        String sqlQuery = "UPDATE item_detalle SET id_reparacion= ? ,id_repuesto = ? ,cantidad= ?  WHERE id_detalle = ?";
-            if (buscarItem_detallePorID(item.getId_detalle()) != null) {
+        String sql = "UPDATE item_detalle SET id_reparacion= ? ,id_repuesto = ? ,cantidad= ?  WHERE id_ItemRepuesto = ?";
+
             try {
-            PreparedStatement ps = com.prepareStatement(sqlQuery);
-            ps.setInt(1, item.getReparacion().getId());
-            ps.setInt(2, item.getRepuesto().getId());
+            PreparedStatement ps = com.prepareStatement(sql);
+            ps.setInt(1, item.getReparacion().getId_reparacion());
+            ps.setInt(2, item.getRepuesto().getNum_serie());
             ps.setInt(3, item.getCantidad());
-            ps.setDouble(4, item.getSuma_precios());
-            ps.setDouble(5, item.getId_detalle());
+            ps.setDouble(4, item.getId_itemrepuesto());
            
            
             if (ps.executeUpdate() > 0) {
@@ -112,31 +111,29 @@ public void guardarItemrepuesto (Itemrepuesto item){
         }  
             }
             
-        }
+        
     //listar itemDetalle
-    public ArrayList<Item_detalle> listarItem() {
+    public ArrayList<Itemrepuesto> listarItem() {
 
-        ArrayList<Item_detalle> listaItem = new ArrayList();
+        ArrayList<Itemrepuesto> listaItem = new ArrayList();
        
-        String sql = "SELECT * FROM item_detalle WHERE borrado= false";
+        String sql = "SELECT * FROM itemrespuesto WHERE estado= 1";
 
         try {
-            PreparedStatement ps = conexionData.prepareStatement(sql);
+            PreparedStatement ps = com.prepareStatement(sql);
             
 
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
 
-                Item_detalle item = new Item_detalle();
+                Itemrepuesto item = new Itemrepuesto();
 
-                item.setId_detalle(rs.getInt("id_detalle"));
+                item.setId_itemrepuesto(rs.getInt("id_ItemRespuesto"));
                 item.setReparacion(repaData.buscarReparacionPorID(rs.getInt("id_reparacion")));
-                item.setRepuesto(repuData.buscarRepuestoPorID(rs.getInt("id_repuesto")));
+                item.setRepuesto(repuData.obtenerRepuesto(rs.getInt("num_serie")));
                 item.setCantidad(rs.getInt("cantidad"));
-                item.setSuma_precios(rs.getDouble("suma_precios"));
-                item.setBorrado(rs.getBoolean("borrado"));
-                
+                             
                 listaItem.add(item);
             }
 
@@ -148,11 +145,11 @@ public void guardarItemrepuesto (Itemrepuesto item){
         return listaItem;
     }
     
-    //dar de baja itemDetalle
+    
       public void borrarItemDetalle (int id){
-        String sql="DELETE item_detalle SET borrado= true WHERE id_detalle = ?";
+        String sql="DELETE FROM itemrepuesto WHERE id_ItemRepuesto = ?";
         try {
-            PreparedStatement ps=conexionData.prepareStatement(sql);
+            PreparedStatement ps=com.prepareStatement(sql);
             ps.setInt(1, id);
             ps.executeUpdate();
             
@@ -165,7 +162,7 @@ public void guardarItemrepuesto (Itemrepuesto item){
             ps.close();
             
     }   catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error de tipo exception " + ex);
+            JOptionPane.showMessageDialog(null, "Error: de tipo exception ");
         }
     }
 
@@ -176,4 +173,3 @@ public void guardarItemrepuesto (Itemrepuesto item){
     
     
     
-}
