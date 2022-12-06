@@ -22,7 +22,7 @@ import taller.entidades.Servicio;
 public class Serviciodata {
     private Connection com;
 
-    public Serviciodata(Connection com) {
+    public Serviciodata() {
         this.com =Conexion.buscarconexion();
         
         

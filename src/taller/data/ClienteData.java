@@ -21,11 +21,10 @@ import taller.entidades.Cliente;
 public class ClienteData {
     private Connection com;
 
-    public ClienteData(Connection com) {
+    public ClienteData() {
         this.com = Conexion.buscarconexion();}
 
-    public ClienteData() {
-    }
+   
 public void guardarCliente(Cliente cliente) {
 
         String sql = "INSERT INTO cliente(dni, nombre, apellido, domicilio, telefono, estado) VALUES (?,?,?,?,?,?)";

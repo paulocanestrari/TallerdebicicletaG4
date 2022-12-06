@@ -81,13 +81,13 @@ public class Bicicletadata {
     return listaBicicletas;
     }
     
-    public Bicicleta obtenerBicleta(int dni){
-                
-        String sql="SELECT * FROM bicicleta WHERE estado = 1 AND dueño=? ";
+    public Bicicleta obtenerBicleta(int num_serie){
+               
+        String sql="SELECT * FROM bicicleta WHERE estado = 1 AND num_serie=? ";
          Bicicleta b=null;
         try {
             PreparedStatement ps=com.prepareStatement(sql);
-            ps.setInt(1, dni);
+            ps.setInt(1, num_serie);
             ResultSet rs=ps.executeQuery();
             
             if(rs.next()){

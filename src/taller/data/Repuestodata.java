@@ -22,7 +22,7 @@ import taller.entidades.Repuesto;
 public class Repuestodata {
     private Connection com;
 
-    public Repuestodata(Connection com) {
+    public Repuestodata() {
         this.com =Conexion.buscarconexion();
 }
      public void guardarRepuesto(Repuesto repuesto){
