@@ -29,12 +29,13 @@ public class Serviciodata {
 }
     public void crearServicio(Servicio servicio) {
 
-        String sql = "INSERT INTO servicio(codigo, descripcion, costo, estado) VALUES (?, ?, ?,1)";
+        String sql = "INSERT INTO servicio(descripcion, costo, estado) VALUES (?, ?, ?)";
         try {
             PreparedStatement ps = com.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
           
-            ps.setString(2, servicio.getDescripcion());
-            ps.setDouble(3, servicio.getCosto());
+            ps.setString(1, servicio.getDescripcion());
+            ps.setDouble(2, servicio.getCosto());
+            ps.setBoolean(3, servicio.isEstado());
 
             if (ps.executeUpdate() > 0) {
                 JOptionPane.showMessageDialog(null, "Nuevo servicio creado");
@@ -84,7 +85,7 @@ public class Serviciodata {
     }
 
     public void actualizarServicio(Servicio s) {
-        String sql = "UPDATE servicio SET descripcion= ? ,costo= ? WHERE codigo = ?";
+        String sql = "UPDATE servicio SET descripcion= ? , costo= ? WHERE codigo = ?";
         
             try {
                 PreparedStatement ps = com.prepareStatement(sql);
@@ -110,7 +111,7 @@ public class Serviciodata {
 
         ArrayList<Servicio> lista = new ArrayList();
 
-        String sql = "SELECT * FROM servicio WHERE borrado= ?";
+        String sql = "SELECT * FROM servicio WHERE estado = ?";
 
         try {
             PreparedStatement ps = com.prepareStatement(sql);

@@ -30,14 +30,14 @@ public class Itemrepuestodata {
 }
 
 public void guardarItemrepuesto (Itemrepuesto item){
-        String sql = "INSERT INTO itemrespuesto (id_ItemRepuesto ,id_reparacion, num_serie, cantidad, estado) VALUES (?,?,?,?,1)";
+        String sql = "INSERT INTO itemrespuesto (id_reparacion, num_serie, cantidad) VALUES (?,?,?)";
         
         try {
             PreparedStatement ps = com.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             
-            ps.setInt(2, item.getReparacion().getId_reparacion());
-            ps.setInt(3, item.getRepuesto().getNum_serie());
-            ps.setInt(4, item.getCantidad());
+            ps.setInt(1, item.getReparacion().getId_reparacion());
+            ps.setInt(2, item.getRepuesto().getNum_serie());
+            ps.setInt(3, item.getCantidad());
            
             
             if (ps.executeUpdate() > 0) {
@@ -71,7 +71,7 @@ public void guardarItemrepuesto (Itemrepuesto item){
                 item = new Itemrepuesto();
                 item.setId_itemrepuesto(rs.getInt("id_ItemRepuesto"));
                 item.setReparacion(repaData.buscarReparacionPorID(rs.getInt("id_reparacion")));
-                item.setRepuesto(repuData.obtenerRepuesto(rs.getInt("id_repuesto")));
+                item.setRepuesto(repuData.obtenerRepuesto(rs.getInt("num_serie")));
                 item.setCantidad(rs.getInt("cantidad"));
                                
             }
@@ -79,7 +79,8 @@ public void guardarItemrepuesto (Itemrepuesto item){
             ps.close();
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ERROR: en buscar item por id."+ex);
+            JOptionPane.showMessageDialog(null, "ERROR: en buscar item por id.");
+            System.out.println(ex.getMessage());
         }
 
         return item;
@@ -88,7 +89,7 @@ public void guardarItemrepuesto (Itemrepuesto item){
     
     //actualizar itemDetalle
     public void actualizarItemrepuesto(Itemrepuesto item) { 
-        String sql = "UPDATE item_detalle SET id_reparacion= ? ,id_repuesto = ? ,cantidad= ?  WHERE id_ItemRepuesto = ?";
+        String sql = "UPDATE itemrespuesto SET id_reparacion= ? ,num_serie = ? ,cantidad= ?  WHERE id_ItemRepuesto = ?";
 
             try {
             PreparedStatement ps = com.prepareStatement(sql);
@@ -147,7 +148,7 @@ public void guardarItemrepuesto (Itemrepuesto item){
     
     
       public void borrarItemDetalle (int id){
-        String sql="DELETE FROM itemrepuesto WHERE id_ItemRepuesto = ?";
+        String sql="DELETE FROM itemrespuesto WHERE id_ItemRepuesto = ?";
         try {
             PreparedStatement ps=com.prepareStatement(sql);
             ps.setInt(1, id);
@@ -162,7 +163,7 @@ public void guardarItemrepuesto (Itemrepuesto item){
             ps.close();
             
     }   catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error: de tipo exception ");
+            JOptionPane.showMessageDialog(null, "Error con el borrado, verifique consulta sql.");
         }
     }
 
