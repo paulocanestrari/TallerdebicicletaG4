@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import taller.entidades.Bicicleta;
+import taller.entidades.Cliente;
 import taller.entidades.Repuesto;
 
 /**
@@ -150,7 +151,7 @@ public class Bicicletadata {
             JOptionPane.showMessageDialog(null, "Se produjo un error. en actualizar bicicleta"+ex);
         }  
             }
-            
+  
             
     
 }
