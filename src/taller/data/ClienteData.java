@@ -75,18 +75,19 @@ public void guardarCliente(Cliente cliente) {
         return cliente;
     }
  public void actualizarCliente(Cliente cliente) {
-        String sql= "UPDATE cliente SET nombre= ?, apellido= ?, domicilio= ?, telefono= ? WHERE dni=?";
+        String sql= "UPDATE cliente SET nombre= ?, apellido= ?, domicilio= ?, telefono= ?, estado= ? WHERE dni=?";
         
             try {
                 PreparedStatement ps = com.prepareStatement(sql);
                 ps.setString(1, cliente.getNombre());
                 ps.setString(2, cliente.getApellido());
                 ps.setString(3, cliente.getDomicilio());
-                ps.setLong(4, cliente.getTelefono());
-                ps.setInt(5, cliente.getDni());
+                ps.setInt(4, cliente.getTelefono());
+                ps.setBoolean(5, cliente.isEstado());
+                ps.setInt(6, cliente.getDni());
 
                 if (ps.executeUpdate() > 0) {
-                    JOptionPane.showMessageDialog(null, "Cliente actualizado");
+                    JOptionPane.showMessageDialog(null, "Cliente actualizado y dado de alta");
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al actualizar cliente");
                 }
@@ -94,11 +95,11 @@ public void guardarCliente(Cliente cliente) {
                 ps.close();
 
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error al actualizar cliente" );
+                JOptionPane.showMessageDialog(null, "Error: al actualizar cliente" + ex);
             }
         }
      public void borrarCliente(int dni) {
-        String sql = "UPDATE cliente SET borrado= true WHERE dni= ?";
+        String sql = "UPDATE cliente SET estado= false WHERE dni= ?";
         try {
             PreparedStatement ps = com.prepareStatement(sql);
             ps.setInt(1, dni);
@@ -135,10 +136,11 @@ public void guardarCliente(Cliente cliente) {
                 Cliente cl = new Cliente();
 
                 cl.setDni(rs.getInt("dni"));
-                cl.setApellido(rs.getString("apellido"));
-                cl.setTelefono(rs.getInt("telefono"));
                 cl.setNombre(rs.getString("nombre"));
+                cl.setApellido(rs.getString("apellido"));
                 cl.setDomicilio(rs.getString("domicilio"));
+                cl.setTelefono(rs.getInt("telefono"));
+                 
                 cl.setEstado(rs.getBoolean("estado"));
              
                 lista.add(cl);
