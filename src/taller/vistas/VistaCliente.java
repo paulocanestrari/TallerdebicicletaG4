@@ -16,7 +16,7 @@ import taller.entidades.Cliente;
 
 /**
  *
- * @author martin
+ * @author canes
  */
 public class VistaCliente extends javax.swing.JInternalFrame {
 

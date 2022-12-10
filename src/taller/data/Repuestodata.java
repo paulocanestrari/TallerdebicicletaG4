@@ -44,15 +44,15 @@ public class Repuestodata {
         }
     }
     
-    public ArrayList<Repuesto> obtenerRepuesto(){
+    public ArrayList<Repuesto> obtenerRepuestos(boolean estado){
         
         ArrayList<Repuesto> listaRepuesto=new ArrayList();
         
-        String sql="SELECT * FROM repuesto WHERE estado = 1";
+        String sql="SELECT * FROM repuesto WHERE estado = ?";
         
         try {
             PreparedStatement ps=com.prepareStatement(sql);
-            
+            ps.setBoolean(1, estado);
             ResultSet rs=ps.executeQuery();
             
             while(rs.next()){
@@ -109,7 +109,7 @@ public class Repuestodata {
             ps.setInt(1, num_serie);
             ps.executeUpdate();//
             
-            JOptionPane.showMessageDialog(null, "Se elimino el repuesto correctamente");
+            JOptionPane.showMessageDialog(null, "Se dio de baja el repuesto correctamente");
             
             ps.close();
             
@@ -129,7 +129,7 @@ public void actualizarRepuesto(Repuesto r) {
                 ps.setInt(4, r.getNum_serie());
 
                 if (ps.executeUpdate() > 0) {
-                    JOptionPane.showMessageDialog(null, "Se pudo actualizar el repuesto.");
+                    JOptionPane.showMessageDialog(null, "Se actualizó y esta dado de Alta el repuesto.");
                 } else {
                     JOptionPane.showMessageDialog(null, "No se pudo actualizar el repuesto.");
                 }

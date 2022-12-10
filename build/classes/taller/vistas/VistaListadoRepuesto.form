@@ -7,6 +7,9 @@
   </NonVisualComponents>
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
+    <Property name="iconifiable" type="boolean" value="true"/>
+    <Property name="maximizable" type="boolean" value="true"/>
+    <Property name="resizable" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -40,36 +43,41 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder justification="2" position="2" title="Listado de repuesto">
-              <Font PropertyName="font" name="Constantia" size="16" style="0"/>
+            <TitledBorder justification="2" position="2" title="Lista de repuesto">
+              <Font PropertyName="font" name="Verdana" size="16" style="1"/>
             </TitledBorder>
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel()"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="JBdarDeAlta" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          <Component id="JBdarDeBaja" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="JRBdadosDeBaja" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="JRBdadosDeAlta" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" alignment="1" pref="528" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                                  <Component id="JBdarDeAlta" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                  <Component id="JBdarDeBaja" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="JRBdadosDeBaja" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                                  <Component id="JRBdadosDeAlta" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -81,14 +89,14 @@
                       <Component id="JRBdadosDeBaja" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JRBdadosDeAlta" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="86" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JBdarDeAlta" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JBdarDeBaja" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -114,7 +122,6 @@
                     <Column editable="true" title="Title 4" type="java.lang.Object"/>
                   </Table>
                 </Property>
-                <Property name="showGrid" type="boolean" value="true"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -122,7 +129,7 @@
         <Component class="javax.swing.JButton" name="JBdarDeAlta">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Constantia" size="14" style="0"/>
+              <Font name="Verdana" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dar de Alta"/>
           </Properties>
@@ -133,7 +140,7 @@
         <Component class="javax.swing.JButton" name="JBdarDeBaja">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Constantia" size="14" style="0"/>
+              <Font name="Verdana" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dar de Baja"/>
           </Properties>
@@ -147,7 +154,7 @@
               <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Constantia" size="12" style="0"/>
+              <Font name="Verdana" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dados de Baja"/>
           </Properties>
@@ -162,7 +169,7 @@
               <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Constantia" size="12" style="0"/>
+              <Font name="Verdana" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dados de Alta"/>
           </Properties>
