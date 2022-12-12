@@ -3,21 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/vistas/VistaRepuesto.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/Imagenes/FondoPanel.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/vistas/VistaListadoRepuesto.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/vistas/VistaPrincipal.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/data/Serviciodata.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/data/ClienteData.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/vistas/VistaCliente.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/data/Reparaciondata.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/entidades/Bicicleta.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/vistas/VistaListadoCliente.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/entidades/Repuesto.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/Imagenes/ImagendeFondo.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/vistas/VistaBicicleta.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/data/Repuestodata.java</file>
-            <file>file:/C:/Users/canes/OneDrive/Documentos/NetBeansProjects/TallerdebicicletaG4/src/taller/data/Itemrepuestodata.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaListadoRepuesto.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaListadoCliente.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/data/Reparaciondata.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/entidades/Itemrepuesto.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/data/Itemrepuestodata.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/entidades/Cliente.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/entidades/Servicio.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaGestionReparaciones.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaCliente.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaServicio.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/entidades/Repuesto.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaReparacion.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/data/Serviciodata.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/data/Conexion.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaPrincipal.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/entidades/Bicicleta.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/data/ClienteData.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/data/Bicicletadata.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaRepuesto.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/tallerdebicicletag4/TallerdebicicletaG4.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/vistas/VistaBicicleta.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/data/Repuestodata.java</file>
+            <file>file:/C:/Users/alvar/OneDrive/Documentos/GitHub/TallerdebicicletaG4/src/taller/entidades/Reparacion.java</file>
         </group>
     </open-files>
 </project-private>
